@@ -1,5 +1,7 @@
 console.log('\'Allo \'Allo!');
 
+var countriesInfected = [];
+
 jQuery(document).ready(function () {
     var map;
 
@@ -93,19 +95,22 @@ jQuery(document).ready(function () {
 
       map.data.setStyle(function(feature) {
 	    var color = 'green';
+
 	    if (feature.getProperty('isColorful')) {
 	      color = feature.getProperty('color');
+
 	    }
+
 	    return /** @type {google.maps.Data.StyleOptions} */({
 	      fillColor: color,
 	      strokeColor: color,
 	      strokeWeight: 2
 	    });
+
 	  });
 
 	  map.data.addListener('click', function(event) {
-	    event.feature.setProperty('isColorful', true);
-
+	  	setCountryToInfected(event);
 	  });
 
 	  map.data.addListener('mouseover', function(event) {
@@ -129,8 +134,16 @@ jQuery(document).ready(function () {
 	    document.getElementById('info-box').textContent = event.feature.getProperty('SOVEREIGNT');
 	  });
 
-
 });
+
+function setCountryToInfected(event) {
+	  event.feature.setProperty('isColorful', true);
+	  countriesInfected.push();
+}
+
+function getNumberOfInfected() {
+	return countriesInfected.length;
+}
 
 (function($) {
     $.fn.countTo = function(options) {
@@ -194,3 +207,4 @@ jQuery(function($) {
 $(window).load(function(){
     $('#myModal').modal('show');
 });
+

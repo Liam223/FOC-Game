@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/image-picker.css">
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
@@ -24,10 +25,19 @@
           <h4 class="modal-title text-danger" id="myModalLabel">CODE RED</h4>
         </div>
         <div class="modal-body">
-          ...
+            <select class="image-picker show-labels">
+              <option data-img-label="Virus 1" data-img-src="http://placekitten.com/220/200" value="1">Virus 1</option>
+              <option data-img-label="Virus 2" data-img-src="http://placekitten.com/220/200" value="2">Virus 2</option>
+              <option data-img-label="Virus 3" data-img-src="http://placekitten.com/220/200" value="3">Virus 3</option>
+              <option data-img-label="Virus 4" data-img-src="http://placekitten.com/220/200" value="4">Virus 4</option>
+            </select>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Play</button>
+          <div class="col-lg-4"></div>
+          <div class="col-lg-4">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Play</button>
+          </div>
+          <div class="col-lg-4"></div>
         </div>
       </div>
     </div>
@@ -58,8 +68,8 @@
               </ul>
 
               <ul class="nav navbar-nav pull-right">
-                <li class="navbar-brand-m text-success"><i class="fa fa-usd"></i> Money: <span class="timer"></span></li>
-                <li class="navbar-brand-i text-danger"><i class="fa fa-laptop"></i> Infected: <span class="timer"></span></li>
+                <li class="navbar-brand-m text-success"><i class="fa fa-usd"></i> Money: <span class="money">0</span></li>
+                <li class="navbar-brand-i text-danger"><i class="fa fa-laptop"></i> Infected: <span class="infected">0</span></li>
               </ul>
               </div>
             </div>
@@ -84,6 +94,7 @@
         <!-- build:js scripts/main.js -->
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="scripts/main.js"></script>
+        <script src="scripts/image-picker.js"></script>
         <script src="scripts/hello.js"></script>
         <!-- endbuild -->
 
@@ -100,6 +111,7 @@
         <script src="bower_components/bootstrap/js/scrollspy.js"></script>
         <script src="bower_components/bootstrap/js/collapse.js"></script>
         <script src="bower_components/bootstrap/js/tab.js"></script>
+        <script> $("select").imagepicker(); </script>
         <!-- endbuild -->
 </body>
 </html>
