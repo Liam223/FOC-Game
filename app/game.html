@@ -17,8 +17,25 @@
   </head>
   <body>
 
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title text-danger" id="myModalLabel">CODE RED</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Play</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 	<div id="map"></div>
-  <div id="info-box">?</div>
+
+  <div id="info-box" class="mainUI"></div>
 
 	<div class="navbar-wrapper">
 
@@ -39,18 +56,17 @@
                 <li class="active"><a href="#game">Play</a></li>
                 </li>
               </ul>
+
+              <ul class="nav navbar-nav pull-right">
+                <li class="navbar-brand-m text-success"><i class="fa fa-usd"></i> Money: <span class="timer"></span></li>
+                <li class="navbar-brand-i text-danger"><i class="fa fa-laptop"></i> Infected: <span class="timer"></span></li>
+              </ul>
+              </div>
             </div>
           </div>
         </nav>
 
     </div>
-
-    <div class = "col-lg-3">
-      <ul class="list-group">
-        <li class="list-group-item">Score: <span class="timer"></span></li>
-      </ul>
-    </div>
-
 
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
