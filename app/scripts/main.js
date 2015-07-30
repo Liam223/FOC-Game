@@ -138,7 +138,7 @@ jQuery(document).ready(function () {
 
 function setCountryToInfected(event) {
 	  event.feature.setProperty('isColorful', true);
-	  countriesInfected.push();
+	  countriesInfected.push(event.feature.getProperty('SOVEREIGNT'));
 }
 
 function getNumberOfInfected() {
